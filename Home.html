@@ -52,20 +52,17 @@
                             <form id="bookingForm" class="booking-form">
                                 <div class="controlHolder">
                                     <div class="tmInput">
-                                        <input name="name" placeholder="Ваше Имя и Фамилия" type="text"
-                                               data-constraints="@NotEmpty @Required @AlphaSpecial">
+                                        <input name="name" placeholder="Ваше Имя и Фамилия" type="text">
                                     </div>
                                 </div>
                                 <div class="controlHolder">
                                     <div class="tmInput">
-                                        <input name="phone" placeholder="Ваш номер телефона" type="tel"
-                                               data-constraints="@NotEmpty @Required @Email"
-                                               id="regula-generated-128727">
+                                        <input name="phone" placeholder="Ваш номер телефона" type="tel">
                                     </div>
                                 </div>
 
-                                <a href="https://linkhere.todo" class="btn"
-                                   data-type="submit">Отправить!</a>
+                                <a href="#" class="btn"
+                                   data-type="submit" onclick="sendForm()">Отправить!</a>
                             </form>
                             <p>Подключение к Яндекс.Такси
                                 за 15 минут
@@ -161,6 +158,12 @@
 
 <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0">
 <script src="./Home_files/jquery.rd-parallax.js"></script>
+<script type="application/javascript">
+    function sendForm(e) {
+        alert($('#bookingForm').serialize());
+        $.get('server.php', $('#bookingForm').serialize());
+    };
+</script>
 
 </body>
 
